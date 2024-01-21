@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <main id="main">
+
+    <!-- Blog Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Own a Piece of Sukoon</h1>
+              <p class="mb-0">Bring the spirit of Sukoon Ghar into your life by owning a handcrafted masterpiece. Browse our collection, and let each item tell a story of skill, passion, and the community spirit that defines Sukoon Ghar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'items' %}">Store</a></li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Section - Blog Page -->
+    <section id="blog" class="blog">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 posts-list">
+          {% for item in items_data %}
+          <div class="col-xl-4 col-lg-6">
+            <article>
+
+              <div class="post-img">
+                <a href="{% url 'show_item' item.id %}"><img src="{{ item.image.url }}" alt="" class="img-fluid"></a>
+              </div>
+
+              <p class="post-category">{{ item.description }}</p>
+
+              <h2 class="title">
+                <a href="{% url 'show_item' item.id %}">{{ item.product_name }}</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <div class="post-meta">
+                  <p class="post-date">
+                   
+                  </p>
+                </div>
+              </div>
+             
+            </article>
+            
+          </div><!-- End post list item -->
+        
+          {% endfor %}
+        
+        </div><!-- End blog posts list -->
+
+        <!-- End pagination -->
+
+      </div>
+
+    </section><!-- End Blog Section -->
+
+  </main>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Add this CSS link in the head section of your HTML to include Fancybox styles -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+<main id="main">
+
+  <main id="main">
+
+    <!-- Portfolio Details Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1> Memory Gallery </h1>
+              <p class="mb-0">We're always brewing up new adventures and opportunities for you to shine. Whether it's a digital literacy bonanza or a funky art and music jam, we promise you won't want to miss out.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="current">Events Gallery</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+  
+    <!-- Portfolio-details Section - Portfolio Details Page -->
+    <!-- gallery.html -->
+    <section id="portfolio" class="portfolio">
+   
+      <!--  Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Vibrant World of Sukoon Ghar</h2>
+        <p>Each image is a visual tale, showcasing the artistry, community spirit, and empowering moments that define Sukoon Ghar. </p>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+    
+            {% for photo in gallery_data %}
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                    <img src="{{ photo.image.url }}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{ photo.name }}</h4>
+                        <p>{{ photo.description }}</p>
+                        
+                    </div>
+                </div><!-- End Portfolio Item -->
+            {% endfor %}
+    
+        </div><!-- End Portfolio Container -->
+    </div>
+    
+    </section><!-- End Picture Gallery Section -->
+
+    <!-- End Portfolio-details Section -->
+  
+  </main>
+
+  <!-- Picture Gallery Section -->
+  
+
+</main>
+
+<!-- Include Fancybox library at the end of your body -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<!-- Initialize Fancybox script -->
+<script>
+  $(document).ready(function () {
+    $("[data-fancybox]").fancybox({
+      animationEffect: "slide",
+      transitionEffect: "slide",
+      loop: true,
+    });
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% load static %}
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1>Sukoon Ghar</h1>
+      <span>.</span>
+    </a>
+
+    <!-- Nav Menu -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'home' %}" class="active">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'items' %}">Products</a></li>
+       
+        <li><a href="{% url 'events' %}">Gallery</a></li>
+        <li><a href="#team">Team</a></li>
+        
+        
+
+        <li><a href="#recent-posts">Recent Posts</a></li>
+    
+
+      </ul>
+
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav><!-- End Nav Menu -->
+    <div class="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
+    
+      <a href="https://drive.google.com/file/d/1RdALz3Dgc3yecoINxXJ4KXhpOK0dY7qQ/view?usp=sharing">
+        <button
+			type="button"
+			class="rounded px-3 py-2 text-sm font-semibold text-white "
+			style="background-color: #e84545;border: none;"
+		>
+    Product Catalogue
+		</button>
+      </a>
+			
+    
+			
+		  
+		  </div>
+    
+
+  </div>
+</header><!-- End Header -->

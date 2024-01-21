@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main id="main">
+
+  <!-- Hero Section - Home Page -->
+  <section id="hero" class="hero">
+
+    <img src="{{ about_data.image.url }}" alt="" data-aos="fade-in">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <h2 data-aos="fade-up" data-aos-delay="100">{{  about_data.main_title }} </h2>
+          <p data-aos="fade-up" data-aos-delay="200">{{ about_data.main_description }} </p>
+        </div>
+     
+      </div>
+    </div>
+
+  </section><!-- End Hero Section -->
+
+ 
+
+  <!-- About Section - Home Page -->
+  <section id="about" class="about">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row align-items-xl-center gy-5">
+
+        <div class="col-xl-5 content">
+          <h3>About Us</h3>
+          <h2>{{ about_data.sub_title }}</h2>
+          <p> {{ about_data.sub_description }}</p>
+          <a href="{% url 'about' %}" class="read-more"><span>What is Sukoon Ghar?</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="col-xl-7">
+          <div class="row gy-4 icon-boxes">
+
+            {% for obj_data in objectives_data %}
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-box">
+                <i class="{{ obj_data.icon }}"></i>
+                <h3>{{ obj_data.title }}</h3>
+                <p>{{ obj_data.description }}</p>
+              </div>
+            </div> <!-- End Icon Box -->
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section><!-- End About Section -->
+
+  <!-- Stats Section - Home Page -->
+  <section id="stats" class="stats">
+    <img src="{% static 'img/banner_bg.jpeg' %}" alt="" data-aos="fade-in">
+          <div class="col-lg-5 col-md-10">
+          <div class="stats-item text-center w-100 h-500">
+                     </div>
+      </div>
+
+  </section><!-- End Stats Section -->
+
+
+
+  <!-- Explore collection Section - Home Page -->
+  <section id="features" class="features">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Own a Piece of Sukoon</h2>
+      <p>Bring the spirit of Sukoon Ghar into your life by owning a handcrafted masterpiece. Browse our collection, and let each item tell a story of skill, passion, and the community spirit that defines Sukoon Ghar.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4 align-items-center features-item">
+        <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h3>{{ shop_img.title }}</h3>
+          <p>
+            {{ shop_img.description }}
+          </p>
+          <a href="{% url 'items' %}" class="btn-getstarted">{{ shop_img.button_text }}</a>
+        </div>
+        <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+          <div class="image-stack">
+            <img src="{{ shop_img.front_image.url }}" alt="" class="stack-front">
+            <img src="{{ shop_img.back_image.url }}" alt="" class="stack-back">
+          </div>
+        </div>
+      </div><!-- Features Item -->
+
+
+    </div>
+
+  </section><!-- End Features Section -->
+
+
+  
+  <!-- EVENTS Section - Home Page -->
+  <section id="portfolio" class="portfolio">
+   
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Events</h2>
+      <p>We host a wide array of events that are as vibrant as a rainbow! From high-energy workshops to chill-out creative sessions, there's always something happening.</p>
+    </div><!-- End Section Title -->
+    <div class="container">
+      <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+  
+          {% for event in event_data %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                  <img src="{{ event.image.url }}" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                      <h4>{{ event.event_name }}</h4>
+                      <p>{{ event.event_description }}</p>
+                      
+                      <a href="{% url 'events' %}" title="Visit Gallery" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  </div>
+              </div><!-- End Portfolio Item -->
+          {% endfor %}
+  
+      </div><!-- End Portfolio Container -->
+  </div>
+  
+  </section><!-- End Portfolio Section -->
+
+  <section id="team" class="team">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Heart of Sukoon Ghar</h2>
+      <p>Meet the Heart of Sukoon Ghar, quietly guiding Sukoon Ghar with a heart full of compassion, fostering change with humility, and empowering lives one step at a time. </p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-5">
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+          <div class="member-img">
+            <img src="{% static 'img/varsha.png' %}" class="img-fluid" alt="">
+            <div class="social">
+              
+              <a href="https://www.instagram.com/varsha_chaudhary23/"><i class="bi bi-instagram"></i></a>
+           
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>Varsha</h4>
+            <span>Founder</span>
+            <p>Meet Varsha, the visionary force behind Sukoon Ghar. What began as a humble dream in a small space in Kashiram Baraut, Uttar Pradesh, has now blossomed into a beacon of hope and empowerment.</p>
+          </div>
+        </div><!-- End Team Member -->
+  
+
+       
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Team Section - Home Page -->
+  <section id="team" class="team">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Soul of Sukoon Ghar</h2>
+      <p>In the vibrant tapestry of Sukoon Ghar, our unsung heroes are the dedicated volunteers who infuse passion and purpose into every initiative.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-5">
+        {% for team in team_data %}
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+          <div class="member-img">
+            <img src="{{ team.image.url }}" class="img-fluid" alt="">
+            <div class="social">
+              
+              <a href="{{ team.insta_link }}"><i class="bi bi-instagram"></i></a>
+           
+            </div>
+          </div>
+          <div class="member-info text-center">
+            <h4>{{ team.name }}</h4>
+            <span>{{ team.role }}</span>
+            <p>{{ team.description }}</p>
+          </div>
+        </div><!-- End Team Member -->
+        {% endfor %}
+
+       
+
+      </div>
+
+    </div>
+
+  </section><!-- End Team Section -->
+
+  <!-- Stats Section - Home Page -->
+  <section id="stats" class="stats">
+    <img src="{% static 'img/banner_bg.jpeg' %}" alt="" data-aos="fade-in">
+          <div class="col-lg-5 col-md-10">
+          <div class="stats-item text-center w-100 h-500">
+                     </div>
+      </div>
+
+  </section><!-- End Stats Section -->
+
+
+
+
+  <!-- Contact Section - Home Page -->
+  <section id="contact" class="contact">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Get in Touch</h2>
+      <p>Have questions, ideas, or simply want to connect? We'd love to hear from you! Reach out to us </p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6">
+
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="200">
+                <i class="bi bi-geo-alt"></i>
+                <h3>Address</h3>
+                <p>H. No-2B, 268, Distt, Avas Vikas Colony,</p>
+                <p> Baraut, Uttar Pradesh, 250611</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="300">
+                <i class="bi bi-telephone"></i>
+                <h3>Call Us</h3>
+               
+                <p>8791661983</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="400">
+                <i class="bi bi-envelope"></i>
+                <h3>Email Us</h3>
+                <p>sukoongharbaraut@gmail.com</p>
+                <p></p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-6">
+              <div class="info-item" data-aos="fade" data-aos-delay="500">
+                <i class="bi bi-clock"></i>
+                <h3>Open Hours</h3>
+                <p>Monday - Friday</p>
+                <p>9:00AM - 05:00PM</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+          
+      
+           
+        </div>
+       
+
+          <!--  Section Title -->
+          <!-- End Section Title -->
+         
+          
+          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <div class="post-img">
+              <img src="{% static 'img/contact.png' %}" alt="" class="img-fluid">
+            </div>
+            
+          </div>
+     
+       <!-- End Contact Form -->
+     
+      </div>
+      
+    </div>
+
+  </section>
+  <!-- End Contact Section -->
+
+  
+  <!-- Recent-posts Section - Home Page -->
+  <section id="recent-posts" class="recent-posts">
+
+    <!--  Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Recent Posts</h2>
+      <p>Sukoon Ghar's Instagram is a vibrant canvas, painted with moments of empowerment, creativity, and community spirit. Each post is a snapshot of the incredible journey we embark on together. Get a glimpse of some of our recent posts.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+        {% for post in post_data %}
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <article>
+
+            <div class="post-img">
+              <img src="{{ post.post_image.url }}" alt="" class="img-fluid">
+            </div>
+
+            <p class="post-category">{{ post.title }}</p>
+
+            <h2 class="title">
+              <a href="{{ post.post_link }}">{{ post.description }}</a>
+            </h2>
+
+
+          </article>
+        </div><!-- End post list item -->
+        {% endfor %}
+
+      </div><!-- End recent posts list -->
+
+    </div>
+
+  </section><!-- End Recent-posts Section -->
+
+</main>
+{% endblock %}
