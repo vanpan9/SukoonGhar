@@ -78,11 +78,8 @@ WSGI_APPLICATION = 'sukoon_ghar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'sukoon',
-        'USER':'postgres',
-        'PASSWORD':'4421',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':BASE_DIR/'db.sqlite3'
     }
 }
 
